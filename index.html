@@ -11,7 +11,7 @@
     <div class="app-container">
       <div class="servers-sidebar scrollbar-hidden">
         <a href="#" class="server active" data-active-toggle="server">
-          <img src="./imgs/servers/hiking-lovers.jpg" alt="Hiking Lovers" />
+          <img src="./imgs/servers/DS.jpg" alt="Hiking Lovers" />
         </a>
         <a
           href="#"
@@ -36,80 +36,112 @@
         >
           TSAD
         </a>
-        <a href="#" class="server" data-active-toggle="server">TNS</a>
+        <a 
+          href="#" 
+          class="server" 
+          data-active-toggle="server"
+        >
+          TNS
+        </a>
       </div>
       <button class="channels-sidebar-header outline-inset">
-        Hiking Lovers
+        DARK SIDE
         <svg class="chevron"><use href="#svg-chevron" /></svg>
       </button>
       <div class="channels-sidebar scrollbar-vanishing">
-        <div class="channel-group">
+        <div data-channel-group class="channel-group">
+          <button data-channel-group-toggle class="channel-group-title">
+            <svg class="chevron"><use href="#svg-chevron" /></svg>
+            🍂 SELF ROLES
+          </button>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            general
-          </a>
-          <a href="#" data-active-toggle="channel" class="channel muted">
-            <svg class="hash"><use href="#svg-hash" /></svg>
-            introductions
+            🎮 games • roles
           </a>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            new-members
+            🎭 personal • roles
           </a>
         </div>
         <div data-channel-group class="channel-group">
           <button data-channel-group-toggle class="channel-group-title">
             <svg class="chevron"><use href="#svg-chevron" /></svg>
-            Hiking Trips
+            💬 COMMUNITY
           </button>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            north-america
+            💬 general • chat
           </a>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            europe
+            🤖 commands
           </a>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            africa
+            📸 media
           </a>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            asia
+            🎨 art
           </a>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            south-america
+            😂 memes
           </a>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            australia
+            🎮 games • chat
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🎥 games • clips
           </a>
         </div>
         <div data-channel-group class="channel-group collapsed">
           <button data-channel-group-toggle class="channel-group-title">
             <svg class="chevron"><use href="#svg-chevron" /></svg>
-            Other
+            🔴 NEWS
           </button>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            hiking-advice
+            📰 offer • a • jop
           </a>
           <a href="#" data-active-toggle="channel" class="channel">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            hiking-gear
+            📰 apply • for • jop
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            📰 news
+          </a>
+        </div>
+        <div data-channel-group class="channel-group">
+          <button data-channel-group-toggle class="channel-group-title">
+            <svg class="chevron"><use href="#svg-chevron" /></svg>
+            ⛔ REPORT
+          </button>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🚩 report • info
           </a>
           <a href="#" data-active-toggle="channel" class="channel active">
             <svg class="hash"><use href="#svg-hash" /></svg>
-            Who-Is-WOLFIX
+            📬 report • chat
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            ⛔ report • pub
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-voice" /></svg>
+            ⛔ NEED • HELP
           </a>
         </div>
       </div>
       <header class="chat-header">
         <div class="channel-name">
           <svg class="hash"><use href="#svg-hash" /></svg>
-          Who-Is-WOLFIX
+          📬 report • chat
         </div>
         <div class="icons">
           <button class="icon" data-active-toggle="chat-header-icon">
@@ -138,9 +170,18 @@
           <button class="icon" data-active-toggle="chat-header-icon">
             <svg><use href="#svg-inbox" /></svg>
           </button>
-          <button class="icon" data-active-toggle="chat-header-icon">
-            <svg><use href="#svg-help" /></svg>
-          </button>
+<!-- Button to open the modal -->
+<button class="icon" data-active-toggle="chat-header-icon" onclick="showModal()">
+  <svg><use href="#svg-help"></use></svg>
+</button>
+
+<!-- Modal and overlay -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="close-btn" onclick="hideModal()">✖</button>
+    <p>هذه الصفحة للمزاح فقط، وأعتذر لكل من يجد نفسه هنا. شكراً لكم جميعاً! (وإذا كنت حساساً بشأن أي شيء تعرف أين تجدني ) </p>
+  </div>
+</div>
         </div>
       </header>
       <div class="chat-window">
@@ -162,10 +203,12 @@
                   <svg><use href="#svg-more" /></svg>
                 </button>
               </div>
-              <img src="./imgs/avatars/camilla-hobart.jpg" alt="Camilla Hobart" class="message-avatar" />
+              <img src="./imgs/avatars/camilla-hobart.jpg" alt="! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷" class="message-avatar" />
+
               <div>
                 <div class="message-group-header">
-                  <span class="text-light">Camilla Hobart</span>
+                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #370869">! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷</span>
+                  <img src="./imgs/avatars/yaratag.webp" alt="yaratag"/>
                   <span class="text-dark text-sm">Today at 12:58 PM</span>
                 </div>
                 Who is Wolfix? People say he's amazing. I don't believe it!
@@ -227,7 +270,8 @@
               <img src="./imgs/avatars/daniel-sutten.jpg" class="message-avatar" />
               <div>
                 <div class="message-group-header">
-                  <span class="text-light">Daniel Sutten</span>
+                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #397931">!ᴼᴹ 𝐆𝐄𝐍𝐓𝐋𝐄𝐌𝐀𝐍♕👑</span>
+                  <img src="./imgs/avatars/5568aab860c5e5c39abe8a1a58742e88.webp" alt="samitag"/>
                   <span class="text-dark text-sm">Today at 1:24 PM</span>
                 </div>
                 I second that! Wolfix must be a myth. Right?
@@ -254,6 +298,7 @@
               <div>
                 <div class="message-group-header">
                   <span class="text-light">Loria Gisch</span>
+                  <img src="./imgs/avatars/loritag.webp" alt="loritag"/>
                   <span class="text-dark text-sm">Today at 1:34 PM</span>
                 </div>
                 My favorite topic is laughing at people who think they know Wolfix.
@@ -297,7 +342,8 @@
               <img src="./imgs/avatars/miles-micco.jpg" class="message-avatar" />
               <div>
                 <div class="message-group-header">
-                  <span class="text-light">Miles Micco</span>
+                  <span class="text-light" style="color: #f50909">! Divor. ⁸⁸⁴ た</span>
+                  <img src="./imgs/avatars/divortag.webp" alt="Divor"/>
                   <span class="text-dark text-sm">Today at 1:44 PM</span>
                 </div>
                 Can’t wait to meet Wolfix in 3 days. Or maybe never. LOL!
@@ -337,11 +383,12 @@
             <div class="user-img-wrapper">
               <img
                 src="./imgs/avatars/camilla-hobart.jpg"
-                alt="Camilla Hobart"
+                alt="! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷"
                 class="user-img"
               />
             </div>
-            <div>Camilla Hobart</div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #370869">! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷</div>
+            <img src="./imgs/avatars/yaratag.webp" alt="divortag"/>
           </button>
           <button
             class="user-list-row"
@@ -355,7 +402,7 @@
                 class="user-img"
               />
             </div>
-            <div>Daniel Sutten</div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #397931">!ᴼᴹ 𝐆𝐄𝐍𝐓𝐋𝐄𝐌𝐀𝐍♕👑</div>
           </button>
           <button
             class="user-list-row"
@@ -370,6 +417,7 @@
               />
             </div>
             <div>Loria Gisch</div>
+            <img src="./imgs/avatars/loritag.webp" alt="loritag"/>
           </button>
           <button
             class="user-list-row"
@@ -383,23 +431,25 @@
                 class="user-img"
               />
             </div>
-            <div>Miles Micco</div>
+            <div style="color: #f50909;">! Divor. ⁸⁸⁴ た</div>
           </button>
         </div>
         <div class="user-list-group">
-          <div class="user-list-group-title">Offline &ndash; 2</div>
+          <div class="user-list-group-title">Offline &ndash; 3</div>
+          <!-- don't ask me way I add you just I Want -->
           <button
             class="user-list-row offline"
             data-active-toggle="user-list-item"
           >
             <div class="user-img-wrapper">
               <img
-                src="./imgs/avatars/martin-imbesi.jpg"
-                alt="Martin Imbesi"
+                src="./imgs/avatars/7okoma.webp"
+                alt="! 𓂀 AL 7OKOUMA"
                 class="user-img"
               />
             </div>
-            <div>Martin Imbesi</div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #0a0909">! 𓂀 AL 7OKOUMA</div>
+            <img src="./imgs/avatars/7okomatag.webp" alt="7okomatag"/>
           </button>
           <button
             class="user-list-row offline"
@@ -407,17 +457,42 @@
           >
             <div class="user-img-wrapper">
               <img
-                src="./imgs/avatars/roselyn-beile.jpg"
-                alt="Roselyn Beile"
+                src="./imgs/avatars/sami.jpg"
+                alt="الأمير عباس القحطاني"
                 class="user-img"
               />
             </div>
-            <div>Roselyn Beile</div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #030303">𝑺𝒙 الأمير عباس القحطاني</div>
+            <img src="./imgs/avatars/samitag.webp" alt="samitag"/>
           </button>
+
+          <!-- me HHH -->
+          <button
+            class="user-list-row offline"
+            data-active-toggle="user-list-item">
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/wolfix.jpg"
+                alt="𝒲𝒪𝐿𝐹𝐼𝒳"
+                class="user-img"/>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #77755a;">
+              𝒲𝒪𝐿𝐹𝐼𝒳
+              <img src="./imgs/avatars/wolfixtag.webp" alt="𝒲𝒪𝐿𝐹𝐼𝒳"/>
+          </div>          
+          </button>
+
         </div>
       </div>
     </div>
+
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol fill="none" viewBox="0 0 23 23" id="svg-voice"> 
+        <path
+          fill="currentColor"
+          d="M3 9v6h4l5 5V4L7 9H3zm12.5 3a2.5 2.5 0 0 0-1.56-2.3.75.75 0 0 1 .56-1.4 4 4 0 0 1 0 7.4.75.75 0 1 1-.56-1.4 2.5 2.5 0 0 0 1.56-2.3zm1.94-6.34a.75.75 0 0 1 1.12-.12 8 8 0 0 1 0 12.92.75.75 0 1 1-.99-1.12 6.5 6.5 0 0 0 0-10.68.75.75 0 0 1-.13-1.1z"
+        ></path>
+      </symbol>
       <symbol fill="none" viewBox="0 0 24 24" id="svg-hash">
         <path
           fill="currentColor"
@@ -559,6 +634,7 @@
         />
       </symbol>
     </svg>
+
   </body>
 </html>
 <!-- 1 -->

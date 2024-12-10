@@ -27,3 +27,13 @@ channelGroupToggles.forEach(channelGroupToggle => {
 usersSidebarToggleButton.addEventListener("click", () => {
   usersSidebar.classList.toggle("hidden")
 })
+
+      // Show the modal
+      function showModal() {
+        document.getElementById("overlay").style.display = "block";
+      }
+    
+      // Hide the modal
+      function hideModal() {
+        document.getElementById("overlay").style.display = "none";
+      }
