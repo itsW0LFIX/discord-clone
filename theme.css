@@ -1,0 +1,28 @@
+@layer theme {
+  :root {
+    --bg-color-lighter: color-mix(in hsl, var(--bg-color), white 7.5%);
+    --bg-color-light: color-mix(in hsl, var(--bg-color), white 2.5%);
+    --bg-color: hsl(223, 6.7%, 20.6%);
+    --bg-color-dark: hsl(220, 6.5%, 18%);
+    --bg-color-darker: hsl(225, 6.3%, 12.5%);
+
+    --foreground-color-light: hsl(0, 0%, 100%);
+    --foreground-color: hsl(210, 9.1%, 87%);
+    --foreground-color-dark: hsl(214, 8.1%, 61.2%);
+    --foreground-color-darker: hsl(228, 6%, 32.5%);
+
+    --accent-color: hsl(235, 85.6%, 64.7%);
+    --accent-color-foreground: hsl(0, 0, 100%);
+
+    --outline-color: hsl(200, 100%, 50%);
+
+    --chat-hover-bg-color: hsl(0, 0%, 0%, 0.05);
+
+    --danger-color: hsl(359, 87%, 60%);
+    --danger-foreground-color: hsl(0, 0%, 100%);
+
+    --success-color: hsl(145, 65%, 39%);
+
+    --warning-color: hsl(40, 86%, 57%);
+  }
+}

@@ -1,0 +1,101 @@
+@layer layouts {
+  .servers-sidebar {
+    position: relative;
+    grid-area: servers;
+    background-color: var(--bg-color-darker);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    overflow-y: auto;
+  }
+}
+
+@layer components {
+  .server {
+    --border-radius: 1.5rem;
+
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--bg-color);
+    color: var(--foreground-color);
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -0.75rem;
+      background-color: var(--foreground-color-light);
+      width: 0.25rem;
+      height: 1.5rem;
+      scale: 0;
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+      transition-property: height, scale;
+      transition-duration: 0.15s;
+      transform-origin: left center;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+
+    &.active,
+    &:hover,
+    &:focus-within {
+      background-color: var(--accent-color);
+      color: var(--accent-color-foreground);
+      --border-radius: 1rem;
+
+      &::before {
+        scale: 1;
+      }
+    }
+
+    &.with-new-messages:not(.active):not(:hover)::before {
+      height: 0.5rem;
+      scale: 1;
+    }
+
+    &.active::before {
+      height: 2.5rem;
+    }
+
+    &[data-notifications-count]::after {
+      content: attr(data-notifications-count);
+      position: absolute;
+      right: -0.125rem;
+      bottom: -0.125rem;
+      background-color: var(--danger-color);
+      color: var(--danger-foreground-color);
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding-inline: 0.375rem;
+      border: 0.25rem solid var(--bg-color-darker);
+      border-radius: 1rem;
+    }
+  }
+
+  .server,
+  .server img {
+    transition-property: border-radius;
+    transition-duration: 0.15s;
+    border-radius: var(--border-radius);
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  .server img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

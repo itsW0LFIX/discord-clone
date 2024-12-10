@@ -1,0 +1,294 @@
+@layer layouts {
+  .chat-header {
+    grid-area: chat-header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    border-bottom: 1px solid var(--bg-color-darker);
+  }
+
+  .chat-window {
+    grid-area: chat;
+    display: flex;
+    flex-direction: column;
+    padding-block-end: 1rem;
+    overflow: hidden;
+  }
+
+  .chat-messages {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block-end: 1rem;
+    overflow-y: auto;
+  }
+}
+
+@layer components {
+  .icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 0.25rem;
+      color: var(--foreground-color-dark);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--foreground-color);
+      }
+
+      &.active {
+        color: var(--foreground-color-light);
+      }
+    }
+
+    .search-input-wrapper {
+      position: relative;
+
+      .search-icon,
+      .x-icon {
+        position: absolute;
+        top: 50%;
+        right: 0.25rem;
+        translate: 0 -50%;
+        height: 1rem;
+        width: 1rem;
+        color: var(--foreground-color-dark);
+        opacity: 0;
+        rotate: 90deg;
+        transition-behavior: allow-discrete;
+        transition-property: opacity, rotate, visibility;
+        transition-duration: 0.15s;
+        border-radius: 0.25rem;
+        pointer-events: none;
+        visibility: hidden;
+
+        @media (prefers-reduced-motion: reduce) {
+          transition: none;
+        }
+      }
+
+      .x-icon:hover {
+        color: var(--foreground-color);
+      }
+
+      &:has(.search-input:placeholder-shown) .search-icon,
+      &:not(:has(.search-input:placeholder-shown)) .x-icon {
+        opacity: 1;
+        rotate: 0deg;
+        pointer-events: all;
+        visibility: visible;
+      }
+
+      .search-input {
+        background-color: var(--bg-color-darker);
+        color: var(--foreground-color);
+        border: none;
+        outline: none;
+        padding: 0.375rem;
+        padding-inline-end: calc(0.375rem + 1rem);
+        border-radius: 0.25em;
+        font-size: 0.875rem;
+        transition: width 0.25s;
+        width: 9rem;
+
+        @media (prefers-reduced-motion: reduce) {
+          transition: none;
+        }
+
+        &::placeholder {
+          color: var(--foreground-color-dark);
+        }
+
+        &:focus-visible,
+        &:not(:placeholder-shown) {
+          width: 15rem;
+        }
+      }
+    }
+  }
+
+  .channel-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .hash {
+      width: 1.5em;
+      height: 1.5em;
+      color: var(--foreground-color-dark);
+    }
+  }
+
+  .message-group {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    column-gap: 1rem;
+
+    .message-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--bg-color-darker);
+      object-fit: cover;
+      object-position: center;
+      justify-self: flex-end;
+    }
+
+    .message-date {
+      visibility: hidden;
+      color: var(--foreground-color-dark);
+      font-size: 0.75rem;
+      line-height: 2;
+      justify-self: flex-end;
+    }
+
+    .message-row {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: span 2;
+      padding-block: 0.25rem;
+      padding-inline-end: 3rem;
+      overflow-wrap: break-word;
+      position: relative;
+
+      .message-group-header {
+        display: flex;
+        gap: 0.75rem;
+        align-items: baseline;
+      }
+
+      &:hover {
+        background-color: var(--chat-hover-bg-color);
+
+        .message-date {
+          visibility: visible;
+        }
+      }
+
+      &:hover .message-popover-actions,
+      .message-popover-actions:has(:focus-visible) {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    .message-popover-actions {
+      display: flex;
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      top: 0;
+      right: 1rem;
+      translate: 0 -50%;
+      background-color: var(--bg-color-dark);
+      border: 1px solid var(--bg-color-light);
+      border-radius: 0.5rem;
+      padding: 0.125rem;
+
+      .action-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--foreground-color-dark);
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+
+        svg {
+          transition: scale 0.15s;
+        }
+
+        &:hover {
+          color: var(--foreground-color);
+          background-color: var(--bg-color-light);
+
+          svg {
+            scale: 1.1;
+          }
+        }
+
+        &.active {
+          color: var(--foreground-color-light);
+          background-color: var(--bg-color-lighter);
+        }
+      }
+    }
+  }
+
+  .message-input-wrapper {
+    --line-height: 1.25;
+    --icon-offset: 0.25rem;
+    --padding-block: 0.875rem;
+    --outline-offset: 0.25rem;
+    --base-height: calc(var(--padding-block) * 2 + var(--line-height) * 1em);
+    --icon-size: calc(var(--base-height) - var(--icon-offset) * 2);
+
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    margin-inline: 1rem;
+
+    .message-input-actions {
+      display: flex;
+      position: absolute;
+      top: var(--icon-offset);
+      right: var(--icon-offset);
+
+      .message-input-icon {
+        position: static;
+      }
+    }
+
+    .message-input-icon {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: var(--icon-offset);
+      left: var(--icon-offset);
+      border-radius: 0.25rem;
+      height: var(--icon-size);
+      width: var(--icon-size);
+      color: var(--foreground-color-dark);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--foreground-color);
+      }
+
+      &.active {
+        color: var(--foreground-color-light);
+      }
+
+      svg {
+        width: calc(var(--base-height) - 1.5rem);
+        height: calc(var(--base-height) - 1.5rem);
+      }
+    }
+
+    .message-input {
+      resize: none;
+      background-color: var(--bg-color-light);
+      border-radius: 0.5rem;
+      border: none;
+      padding-block: var(--padding-block);
+      padding-inline-start: calc(
+        var(--icon-size) + var(--icon-offset) + 0.25rem
+      );
+      padding-inline-end: calc(
+        var(--icon-size) * 4 + var(--icon-offset) + 0.25rem
+      );
+      color: var(--foreground-color);
+      line-height: var(--line-height);
+      min-height: var(--base-height);
+      flex-grow: 1;
+      scrollbar-width: none;
+      field-sizing: content;
+    }
+  }
+}
