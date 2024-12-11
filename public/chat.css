@@ -1,4 +1,13 @@
 @layer layouts {
+  .message-row {
+    margin: -1px 0; /* Reduce the vertical margin */
+  }
+  
+  .message-group {
+    margin-bottom: -15px; /* Adjust the spacing between groups */
+  }
+  
+
   .chat-header {
     grid-area: chat-header;
     display: flex;

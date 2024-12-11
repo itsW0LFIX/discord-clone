@@ -350,6 +350,33 @@
               </div>
             </div>
           </div>
+          <div class="message-group">
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more"></use></svg>
+                </button>
+              </div>
+              <img src="./imgs/avatars/user.jpg" class="message-avatar" />
+              <div>
+                <div class="message-group-header">
+                  <span class="text-light" style="color: #ffffff">user</span>
+                  <img src="./imgs/avatars/loritag.webp" alt="Divor"/>
+                  <span class="text-dark text-sm">Today at 1:44 PM</span>
+                </div>
+                but me I want know who is wolfix ???
+              </div>
+            </div>
+          </div>
         </div>
         <div class="message-input-wrapper">
           <textarea class="message-input" placeholder="Message #trail-ratings"></textarea>
@@ -390,6 +417,21 @@
             <div style="display: flex; align-items: center; gap: 10px; color: #370869">! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷</div>
             <img src="./imgs/avatars/yaratag.webp" alt="divortag"/>
           </button>
+          <button
+          class="user-list-row"
+          data-status="active"
+          data-active-toggle="user-list-item"
+        >
+          <div class="user-img-wrapper">
+            <img
+              src="./imgs/avatars/user.jpg"
+              alt="user"
+              class="user-img"
+            />
+          </div>
+          <div>user</div>
+          <img src="./imgs/avatars/loritag.webp" alt="usertag"/>
+        </button>
           <button
             class="user-list-row"
             data-status="active"
@@ -634,7 +676,66 @@
         />
       </symbol>
     </svg>
-
+    <script>
+      // Function to add a new message
+      function addMessage() {
+        // Get the input field
+        const messageInput = document.querySelector('.message-input');
+    
+        // Get the chat messages container
+        const chatMessages = document.querySelector('.chat-messages');
+    
+        // Get the input value and trim whitespace
+        const messageText = messageInput.value.trim();
+    
+        // If the input is not empty
+        if (messageText !== '') {
+          // Create a new message group container
+          const messageGroup = document.createElement('div');
+          messageGroup.classList.add('message-group');
+    
+          // Create a new message row
+          const messageRow = document.createElement('div');
+          messageRow.classList.add('message-row');
+    
+          // Create a message content container
+          const messageContent = document.createElement('div');
+          messageContent.classList.add('message-content');
+          messageContent.textContent = messageText;
+    
+          // Add the timestamp
+          const messageDate = document.createElement('div');
+          messageDate.classList.add('message-date');
+          const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          messageDate.textContent = currentTime;
+    
+          // Append content to the message row
+          messageRow.appendChild(messageDate);
+          messageRow.appendChild(messageContent);
+    
+          // Append the message row to the message group
+          messageGroup.appendChild(messageRow);
+    
+          // Append the message group to the chat messages
+          chatMessages.appendChild(messageGroup);
+    
+          // Scroll to the bottom of the chat messages
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+          // Clear the input field
+          messageInput.value = '';
+        }
+      }
+    
+      // Event listener for the Enter key
+      document.querySelector('.message-input').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          addMessage();
+        }
+      });
+    </script>
+    
   </body>
 </html>
 <!-- 1 -->
