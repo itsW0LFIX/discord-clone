@@ -4,22 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discord Clone</title>
+    <link rel="icon" href="./imgs/avatars/icon.png" type="image/icon type">
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div class="app-container">
       <div class="servers-sidebar scrollbar-hidden">
-        <a href="#" class="server active" data-active-toggle="server">
-          <img src="./imgs/servers/DS.jpg" alt="Hiking Lovers" />
+        <a 
+          href="#" 
+          class="server" 
+          data-active-toggle="server">
+          <img src="./imgs/avatars/icon.png" alt="Hiking Lovers" />
         </a>
         <a
           href="#"
-          class="server with-new-messages"
-          data-notifications-count="11"
+          class="server active"
           data-active-toggle="server"
         >
-          TCN
+          <img src="./imgs/servers/DS.jpg" alt="Hiking Lovers" />
         </a>
         <a
           href="#"
@@ -38,8 +41,9 @@
         </a>
         <a 
           href="#" 
-          class="server" 
-          data-active-toggle="server"
+          class="server  with-new-messages" 
+          data-notifications-count="11"
+          data-active-toggle="server "
         >
           TNS
         </a>
@@ -527,7 +531,6 @@
         </div>
       </div>
     </div>
-
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
       <symbol fill="none" viewBox="0 0 23 23" id="svg-voice"> 
         <path
