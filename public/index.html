@@ -8,6 +8,61 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
+<style>
+.pf4:hover {
+    background: rgba(0, 207, 69, 0.5)
+}
+
+.pf4:hover svg path{
+    color: white;
+}
+
+.pf4 {
+    background: #36393f;
+    border-radius: 30px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.pf4:hover{
+    border-radius: 15px;
+}
+
+.pf4:hover .tooltip {
+    opacity: 1;
+}
+
+  .ffooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #292B2F;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    width: 310px;
+    /* height: 100%; */
+}
+
+.profooter, .iconsfooter {
+    display: flex;
+    align-items: center;
+
+}
+
+.line {
+    height: 2px;
+    width: 45px;
+    background: #36393f;
+    margin-right: 1px
+}
+</style>
   <body>
     <div class="app-container">
       <div class="servers-sidebar scrollbar-hidden">
@@ -17,6 +72,7 @@
           data-active-toggle="server">
           <img src="./imgs/avatars/icon.png" alt="Hiking Lovers" />
         </a>
+        <div class="line"></div>
         <a
           href="#"
           class="server active"
@@ -30,14 +86,14 @@
           data-notifications-count="2"
           data-active-toggle="server"
         >
-          <img src="./imgs/servers/gym-rats.jpg" alt="Gym Rats" />
+          <img src="./imgs/servers/11pms-World-WeLoveYou.jpg" alt="11pm's World #WeLoveYou." />
         </a>
         <a
           href="#"
           class="server with-new-messages"
           data-active-toggle="server"
         >
-          TSAD
+        <img src="./imgs/servers/Web-Dev-Simplified.webp" alt="Web Dev Simplified" />
         </a>
         <a 
           href="#" 
@@ -45,8 +101,15 @@
           data-notifications-count="11"
           data-active-toggle="server "
         >
-          TNS
+        <img src="./imgs/servers/Raeedxa.webp" alt="Raeedxa" />
         </a>
+        <div class="pf4">
+          <svg style="color: rgba(1, 248, 1, 0.76)" aria-hidden="false" width="24" height="24" viewBox="0 0 22 24">
+              <path fill="currentColor" d="M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z">
+          </path>
+          </svg>
+          <!-- <div class="tooltip" style="right: -120px"></div> -->
+      </div>
       </div>
       <button class="channels-sidebar-header outline-inset">
         DARK SIDE
@@ -141,6 +204,30 @@
             ⛔ NEED • HELP
           </a>
         </div>
+        <div class="ffooter">
+          <div class="profooter">
+              <img src="/imgs/avatars/wolfix.jpg" style="width: 40px; border-radius: 20px;">
+              <div style="margin-left: 5px;" class="holder">
+                  <p style="color: white; font-size: 13px; font-weight: bold;">𝒲𝒪𝐿𝐹𝐼𝒳</p>
+                  <p style="color: grey; font-size: 12px">7u0l</p>
+                  <div class="tooltip2" style="font-size: 13px; left: -150%; top: -40px"></div>
+              </div>
+          </div>
+          <div class="iconsfooter">
+              <div class="holder" style="margin-right: 10px">
+                  <img src="icons/microphone.png">
+                  <div class="tooltip2" style="font-size: 13px; left: -80%; top: -37px"></div>
+              </div>
+              <div class="holder" style="margin-right: 10px">
+                  <img src="icons/headset.png">
+                  <div class="tooltip2" style="font-size: 13px; left: -80%; top: -37px"></div>
+              </div>
+              <div class="holder" style="margin-right: 8px">
+                  <img src="icons/ec-bigger.png">
+                  <div class="tooltip2" style="font-size: 13px; left: -210%; top: -37px"></div>
+              </div>
+          </div>
+      </div>
       </div>
       <header class="chat-header">
         <div class="channel-name">
@@ -271,11 +358,11 @@
                   <svg><use href="#svg-more"></use></svg>
                 </button>
               </div>
-              <img src="./imgs/avatars/daniel-sutten.jpg" class="message-avatar" />
+              <img src="./imgs/avatars/daniel-sutten.png" class="message-avatar" />
               <div>
                 <div class="message-group-header">
-                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #397931">!ᴼᴹ 𝐆𝐄𝐍𝐓𝐋𝐄𝐌𝐀𝐍♕👑</span>
-                  <img src="./imgs/avatars/5568aab860c5e5c39abe8a1a58742e88.webp" alt="samitag"/>
+                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #77755a">𝑺𝒙 𝐾ℎ𝑎𝑟𝑚𝑎𝑗𝑎𒉭</span>
+                  <img src="./imgs/avatars/wolfixtag.webp" alt="samitag"/>
                   <span class="text-dark text-sm">Today at 1:24 PM</span>
                 </div>
                 I second that! Wolfix must be a myth. Right?
@@ -298,11 +385,11 @@
                   <svg><use href="#svg-more"></use></svg>
                 </button>
               </div>
-              <img src="./imgs/avatars/loria-gisch.jpg" class="message-avatar" />
+              <img src="./imgs/avatars/pika.png" class="message-avatar" />
               <div>
                 <div class="message-group-header">
-                  <span class="text-light">Loria Gisch</span>
-                  <img src="./imgs/avatars/loritag.webp" alt="loritag"/>
+                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #030303">𝑺𝒙 𝑃𝑖𝑘𝑎𝑐𝒉𝑢⚡</span>
+                  <img src="./imgs/avatars/samitag.webp" alt="loritag"/>
                   <span class="text-dark text-sm">Today at 1:34 PM</span>
                 </div>
                 My favorite topic is laughing at people who think they know Wolfix.
@@ -343,11 +430,11 @@
                   <svg><use href="#svg-more"></use></svg>
                 </button>
               </div>
-              <img src="./imgs/avatars/miles-micco.jpg" class="message-avatar" />
+              <img src="./imgs/avatars/macow.gif" class="message-avatar" />
               <div>
                 <div class="message-group-header">
-                  <span class="text-light" style="color: #f50909">! Divor. ⁸⁸⁴ た</span>
-                  <img src="./imgs/avatars/divortag.webp" alt="Divor"/>
+                  <span class="text-light" style="color: #373a46">𝑺𝒙 MARCO</span>
+                  <img src="./imgs/avatars/marcow.webp" alt="MARCO"/>
                   <span class="text-dark text-sm">Today at 1:44 PM</span>
                 </div>
                 Can’t wait to meet Wolfix in 3 days. Or maybe never. LOL!
@@ -405,7 +492,7 @@
       </div>
       <div class="chat-sidebar scrollbar-vanishing" data-users-sidebar>
         <div class="user-list-group">
-          <div class="user-list-group-title">Online &ndash; 4</div>
+          <div class="user-list-group-title">Online &ndash; 6</div>
           <button
             class="user-list-row"
             data-status="active"
@@ -414,12 +501,12 @@
             <div class="user-img-wrapper">
               <img
                 src="./imgs/avatars/camilla-hobart.jpg"
-                alt="! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷"
+                alt="! ﾒ𝒲 ʏᴀʀᴀ࿐"
                 class="user-img"
               />
             </div>
-            <div style="display: flex; align-items: center; gap: 10px; color: #370869">! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷</div>
-            <img src="./imgs/avatars/yaratag.webp" alt="divortag"/>
+            <div style="display: flex; align-items: center; gap: 10px; color: #d424bd">! ﾒ𝒲 ʏᴀʀᴀ࿐</div>
+            <!-- <img src="./imgs/avatars/yaratag.webp" alt="divortag"/> -->
           </button>
           <button
           class="user-list-row"
@@ -434,7 +521,7 @@
             />
           </div>
           <div>user</div>
-          <img src="./imgs/avatars/loritag.webp" alt="usertag"/>
+          <!-- <img src="./imgs/avatars/loritag.webp" alt="usertag"/> -->
         </button>
           <button
             class="user-list-row"
@@ -443,12 +530,12 @@
           >
             <div class="user-img-wrapper">
               <img
-                src="./imgs/avatars/daniel-sutten.jpg"
+                src="./imgs/avatars/daniel-sutten.png"
                 alt="aniel Sutten"
                 class="user-img"
               />
             </div>
-            <div style="display: flex; align-items: center; gap: 10px; color: #397931">!ᴼᴹ 𝐆𝐄𝐍𝐓𝐋𝐄𝐌𝐀𝐍♕👑</div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #77755a">𝑺𝒙 𝐾ℎ𝑎𝑟𝑚𝑎𝑗𝑎𒉭</div>
           </button>
           <button
             class="user-list-row"
@@ -457,13 +544,13 @@
           >
             <div class="user-img-wrapper">
               <img
-                src="./imgs/avatars/loria-gisch.jpg"
-                alt="Loria Gisch"
+                src="./imgs/avatars/pika.png"
+                alt="𝑺𝒙 𝑃𝑖𝑘𝑎𝑐𝒉𝑢⚡h"
                 class="user-img"
               />
             </div>
-            <div>Loria Gisch</div>
-            <img src="./imgs/avatars/loritag.webp" alt="loritag"/>
+            <div style="display: flex; align-items: center; gap: 10px; color: #030303">𝑺𝒙 𝑃𝑖𝑘𝑎𝑐𝒉𝑢⚡</div>
+            <!-- <img src="./imgs/avatars/loritag.webp" alt="loritag"/> -->
           </button>
           <button
             class="user-list-row"
@@ -479,6 +566,20 @@
             </div>
             <div style="color: #f50909;">! Divor. ⁸⁸⁴ た</div>
           </button>
+          <button
+          class="user-list-row"
+          data-status="busy"
+          data-active-toggle="user-list-item"
+        >
+          <div class="user-img-wrapper">
+            <img
+              src="./imgs/avatars/macow.gif"
+              alt="Miles Micco"
+              class="user-img"
+            />
+          </div>
+          <div style="color: #373a46;">𝑺𝒙 MARCO</div>
+        </button>
         </div>
         <div class="user-list-group">
           <div class="user-list-group-title">Offline &ndash; 3</div>
