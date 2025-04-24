@@ -51,18 +51,23 @@ This repository contains the UI/UX design and basic functionality for a **Discor
 ## 📁 File Structure
     ```php
     discord-clone/
-    ├── assets/
+    ├── icons/
+    ├── images/
+    ├── imgs/
     │   ├── avatars/
     │   └── servers/
-    ├── index.html
+    ├── styles/
     ├── channels-sidebar.css
     ├── chat-sidebar.css
     ├── chat.css
+    ├── home.html
+    ├── index.html
     ├── modal.css
+    └── script.js
     ├── servers-sidebar.css
     ├── styles.css
     ├── theme.css
-    └── script.js
+    ├── other files about hosting/
 
 ---
 
