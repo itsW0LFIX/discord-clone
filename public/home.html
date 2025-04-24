@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Clone</title>
+    <link rel="icon" href="./imgs/avatars/icon.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+<style>
+.pf4:hover {
+    background: rgba(0, 207, 69, 0.5)
+}
+
+.pf4:hover svg path{
+    color: white;
+}
+
+.pf4 {
+    background: #36393f;
+    border-radius: 30px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.pf4:hover{
+    border-radius: 15px;
+}
+
+.pf4:hover .tooltip {
+    opacity: 1;
+}
+
+  .ffooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #292B2F;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    width: 310px;
+    /* height: 100%; */
+}
+
+.profooter, .iconsfooter {
+    display: flex;
+    align-items: center;
+
+}
+
+.line {
+    height: 2px;
+    width: 45px;
+    background: #36393f;
+    margin-right: 1px
+}
+</style>
+  <body>
+    <div class="app-container">
+      <div class="servers-sidebar scrollbar-hidden">
+        <a 
+          href="#" 
+          class="server" 
+          data-active-toggle="server">
+          <img src="./imgs/avatars/icon.png" alt="Hiking Lovers" />
+        </a>
+        <div class="line"></div>
+        <a
+          href="#"
+          class="server active"
+          data-active-toggle="server"
+        >
+          <img src="./imgs/servers/DS.jpg" alt="Hiking Lovers" />
+        </a>
+        <a
+          href="#"
+          class="server with-new-messages"
+          data-notifications-count="2"
+          data-active-toggle="server"
+        >
+          <img src="./imgs/servers/11pms-World-WeLoveYou.jpg" alt="11pm's World #WeLoveYou." />
+        </a>
+        <a
+          href="#"
+          class="server with-new-messages"
+          data-active-toggle="server"
+        >
+        <img src="./imgs/servers/Web-Dev-Simplified.webp" alt="Web Dev Simplified" />
+        </a>
+        <a 
+          href="#" 
+          class="server  with-new-messages" 
+          data-notifications-count="11"
+          data-active-toggle="server "
+        >
+        <img src="./imgs/servers/Raeedxa.webp" alt="Raeedxa" />
+        </a>
+        <div class="pf4">
+          <svg style="color: rgba(1, 248, 1, 0.76)" aria-hidden="false" width="24" height="24" viewBox="0 0 22 24">
+              <path fill="currentColor" d="M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z">
+          </path>
+          </svg>
+          <!-- <div class="tooltip" style="right: -120px"></div> -->
+      </div>
+      </div>
+      <button class="channels-sidebar-header outline-inset">
+        DARK SIDE
+        <svg class="chevron"><use href="#svg-chevron" /></svg>
+      </button>
+      <div class="channels-sidebar scrollbar-vanishing">
+        <div data-channel-group class="channel-group">
+          <button data-channel-group-toggle class="channel-group-title">
+            <svg class="chevron"><use href="#svg-chevron" /></svg>
+            🍂 SELF ROLES
+          </button>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🎮 games • roles
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🎭 personal • roles
+          </a>
+        </div>
+        <div data-channel-group class="channel-group">
+          <button data-channel-group-toggle class="channel-group-title">
+            <svg class="chevron"><use href="#svg-chevron" /></svg>
+            💬 COMMUNITY
+          </button>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            💬 general • chat
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🤖 commands
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            📸 media
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🎨 art
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            😂 memes
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🎮 games • chat
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🎥 games • clips
+          </a>
+        </div>
+        <div data-channel-group class="channel-group collapsed">
+          <button data-channel-group-toggle class="channel-group-title">
+            <svg class="chevron"><use href="#svg-chevron" /></svg>
+            🔴 NEWS
+          </button>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            📰 offer • a • jop
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            📰 apply • for • jop
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            📰 news
+          </a>
+        </div>
+        <div data-channel-group class="channel-group">
+          <button data-channel-group-toggle class="channel-group-title">
+            <svg class="chevron"><use href="#svg-chevron" /></svg>
+            ⛔ REPORT
+          </button>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            🚩 report • info
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel active">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            📬 report • chat
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-hash" /></svg>
+            ⛔ report • pub
+          </a>
+          <a href="#" data-active-toggle="channel" class="channel">
+            <svg class="hash"><use href="#svg-voice" /></svg>
+            ⛔ NEED • HELP
+          </a>
+        </div>
+        <div class="ffooter">
+          <div class="profooter">
+              <img src="/imgs/avatars/wolfix.jpg" style="width: 40px; border-radius: 20px;">
+              <div style="margin-left: 5px;" class="holder">
+                  <p style="color: white; font-size: 13px; font-weight: bold;">𝒲𝒪𝐿𝐹𝐼𝒳</p>
+                  <p style="color: grey; font-size: 12px">7u0l</p>
+                  <div class="tooltip2" style="font-size: 13px; left: -150%; top: -40px"></div>
+              </div>
+          </div>
+          <div class="iconsfooter">
+              <div class="holder" style="margin-right: 10px">
+                  <img src="icons/microphone.png">
+                  <div class="tooltip2" style="font-size: 13px; left: -80%; top: -37px"></div>
+              </div>
+              <div class="holder" style="margin-right: 10px">
+                  <img src="icons/headset.png">
+                  <div class="tooltip2" style="font-size: 13px; left: -80%; top: -37px"></div>
+              </div>
+              <div class="holder" style="margin-right: 8px">
+                  <img src="icons/ec-bigger.png">
+                  <div class="tooltip2" style="font-size: 13px; left: -210%; top: -37px"></div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <header class="chat-header">
+        <div class="channel-name">
+          <svg class="hash"><use href="#svg-hash" /></svg>
+          📬 report • chat
+        </div>
+        <div class="icons">
+          <button class="icon" data-active-toggle="chat-header-icon">
+            <svg><use href="#svg-thread" /></svg>
+          </button>
+          <button class="icon" data-active-toggle="chat-header-icon">
+            <svg><use href="#svg-notification-bell" /></svg>
+          </button>
+          <button class="icon" data-active-toggle="chat-header-icon">
+            <svg><use href="#svg-pin" /></svg>
+          </button>
+          <button
+            class="icon"
+            data-users-sidebar-toggle
+            data-active-toggle="chat-header-icon"
+          >
+            <svg><use href="#svg-users" /></svg>
+          </button>
+          <div class="search-input-wrapper">
+            <input type="search" placeholder="Search" class="search-input" />
+            <button class="x-icon">
+              <svg><use href="#svg-x" /></svg>
+            </button>
+            <svg class="search-icon"><use href="#svg-search" /></svg>
+          </div>
+          <button class="icon" data-active-toggle="chat-header-icon">
+            <svg><use href="#svg-inbox" /></svg>
+          </button>
+<!-- Button to open the modal -->
+<button class="icon" data-active-toggle="chat-header-icon" onclick="showModal()">
+  <svg><use href="#svg-help"></use></svg>
+</button>
+
+<!-- Modal and overlay -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="close-btn" onclick="hideModal()">✖</button>
+    <p>هذه الصفحة للمزاح فقط، وأعتذر لكل من يجد نفسه هنا. شكراً لكم جميعاً! (وإذا كنت حساساً بشأن أي شيء تعرف أين تجدني ) </p>
+  </div>
+</div>
+        </div>
+      </header>
+      <div class="chat-window">
+        <div class="chat-messages scrollbar-minimal">
+          <div class="flex-spacer"></div>
+          <div class="message-group">
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more" /></svg>
+                </button>
+              </div>
+              <img src="./imgs/avatars/camilla-hobart.jpg" alt="! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷" class="message-avatar" />
+
+              <div>
+                <div class="message-group-header">
+                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #370869">! ﾒ𝒲 ʏᴀʀᴀ࿐ 🍷</span>
+                  <img src="./imgs/avatars/yaratag.webp" alt="yaratag"/>
+                  <span class="text-dark text-sm">Today at 12:58 PM</span>
+                </div>
+                Who is Wolfix? People say he's amazing. I don't believe it!
+              </div>
+            </div>
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more" /></svg>
+                </button>
+              </div>
+              <div class="message-date">12:59 PM</div>
+              <div>They must be joking. Wolfix? Amazing? Hah, dream on!</div>
+            </div>
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward" /></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more" /></svg>
+                </button>
+              </div>
+              <div class="message-date">1:00 PM</div>
+              <div>Wait, who even wants to know? You’re crazy if you do. HHH!</div>
+            </div>
+          </div>
+          <div class="message-group">
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more"></use></svg>
+                </button>
+              </div>
+              <img src="./imgs/avatars/daniel-sutten.png" class="message-avatar" />
+              <div>
+                <div class="message-group-header">
+                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #77755a">𝑺𝒙 𝐾ℎ𝑎𝑟𝑚𝑎𝑗𝑎𒉭</span>
+                  <img src="./imgs/avatars/wolfixtag.webp" alt="samitag"/>
+                  <span class="text-dark text-sm">Today at 1:24 PM</span>
+                </div>
+                I second that! Wolfix must be a myth. Right?
+              </div>
+            </div>
+          </div>
+          <div class="message-group">
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more"></use></svg>
+                </button>
+              </div>
+              <img src="./imgs/avatars/pika.png" class="message-avatar" />
+              <div>
+                <div class="message-group-header">
+                  <span class="text-light" style="display: flex; align-items: center; gap: 10px; color: #030303">𝑺𝒙 𝑃𝑖𝑘𝑎𝑐𝒉𝑢⚡</span>
+                  <img src="./imgs/avatars/samitag.webp" alt="loritag"/>
+                  <span class="text-dark text-sm">Today at 1:34 PM</span>
+                </div>
+                My favorite topic is laughing at people who think they know Wolfix.
+              </div>
+            </div>
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more"></use></svg>
+                </button>
+              </div>
+              <div class="message-date">1:35 PM</div>
+              <div>Close second? Realizing you’re crazy for trying to find out. HHH!</div>
+            </div>
+          </div>
+          <div class="message-group">
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more"></use></svg>
+                </button>
+              </div>
+              <img src="./imgs/avatars/macow.gif" class="message-avatar" />
+              <div>
+                <div class="message-group-header">
+                  <span class="text-light" style="color: #373a46">𝑺𝒙 MARCO</span>
+                  <img src="./imgs/avatars/marcow.webp" alt="MARCO"/>
+                  <span class="text-dark text-sm">Today at 1:44 PM</span>
+                </div>
+                Can’t wait to meet Wolfix in 3 days. Or maybe never. LOL!
+              </div>
+            </div>
+          </div>
+          <div class="message-group">
+            <div class="message-row">
+              <div class="message-popover-actions">
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-emoji"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-edit"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-forward"></use></svg>
+                </button>
+                <button class="action-icon" data-active-toggle="message-popover-action">
+                  <svg><use href="#svg-more"></use></svg>
+                </button>
+              </div>
+              <img src="./imgs/avatars/user.jpg" class="message-avatar" />
+              <div>
+                <div class="message-group-header">
+                  <span class="text-light" style="color: #ffffff">user</span>
+                  <img src="./imgs/avatars/loritag.webp" alt="Divor"/>
+                  <span class="text-dark text-sm">Today at 1:44 PM</span>
+                </div>
+                but me I want know who is wolfix ???
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="message-input-wrapper">
+          <textarea class="message-input" placeholder="Message #trail-ratings"></textarea>
+          <button class="message-input-icon" data-active-toggle="message-input-icon">
+            <svg><use href="#svg-plus" /></svg>
+          </button>
+          <div class="message-input-actions">
+            <button class="message-input-icon" data-active-toggle="message-input-icon">
+              <svg><use href="#svg-present" /></svg>
+            </button>
+            <button class="message-input-icon" data-active-toggle="message-input-icon">
+              <svg><use href="#svg-gif" /></svg>
+            </button>
+            <button class="message-input-icon" data-active-toggle="message-input-icon">
+              <svg><use href="#svg-sticker" /></svg>
+            </button>
+            <button class="message-input-icon" data-active-toggle="message-input-icon">
+              <svg><use href="#svg-emoji" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-sidebar scrollbar-vanishing" data-users-sidebar>
+        <div class="user-list-group">
+          <div class="user-list-group-title">Online &ndash; 6</div>
+          <button
+            class="user-list-row"
+            data-status="active"
+            data-active-toggle="user-list-item"
+          >
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/camilla-hobart.jpg"
+                alt="! ﾒ𝒲 ʏᴀʀᴀ࿐"
+                class="user-img"
+              />
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #d424bd">! ﾒ𝒲 ʏᴀʀᴀ࿐</div>
+            <!-- <img src="./imgs/avatars/yaratag.webp" alt="divortag"/> -->
+          </button>
+          <button
+          class="user-list-row"
+          data-status="active"
+          data-active-toggle="user-list-item"
+        >
+          <div class="user-img-wrapper">
+            <img
+              src="./imgs/avatars/user.jpg"
+              alt="user"
+              class="user-img"
+            />
+          </div>
+          <div>user</div>
+          <!-- <img src="./imgs/avatars/loritag.webp" alt="usertag"/> -->
+        </button>
+          <button
+            class="user-list-row"
+            data-status="active"
+            data-active-toggle="user-list-item"
+          >
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/daniel-sutten.png"
+                alt="aniel Sutten"
+                class="user-img"
+              />
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #77755a">𝑺𝒙 𝐾ℎ𝑎𝑟𝑚𝑎𝑗𝑎𒉭</div>
+          </button>
+          <button
+            class="user-list-row"
+            data-status="inactive"
+            data-active-toggle="user-list-item"
+          >
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/pika.png"
+                alt="𝑺𝒙 𝑃𝑖𝑘𝑎𝑐𝒉𝑢⚡h"
+                class="user-img"
+              />
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #030303">𝑺𝒙 𝑃𝑖𝑘𝑎𝑐𝒉𝑢⚡</div>
+            <!-- <img src="./imgs/avatars/loritag.webp" alt="loritag"/> -->
+          </button>
+          <button
+            class="user-list-row"
+            data-status="busy"
+            data-active-toggle="user-list-item"
+          >
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/miles-micco.jpg"
+                alt="Miles Micco"
+                class="user-img"
+              />
+            </div>
+            <div style="color: #f50909;">! Divor. ⁸⁸⁴ た</div>
+          </button>
+          <button
+          class="user-list-row"
+          data-status="busy"
+          data-active-toggle="user-list-item"
+        >
+          <div class="user-img-wrapper">
+            <img
+              src="./imgs/avatars/macow.gif"
+              alt="Miles Micco"
+              class="user-img"
+            />
+          </div>
+          <div style="color: #373a46;">𝑺𝒙 MARCO</div>
+        </button>
+        </div>
+        <div class="user-list-group">
+          <div class="user-list-group-title">Offline &ndash; 3</div>
+          <!-- don't ask me way I add you just I Want -->
+          <button
+            class="user-list-row offline"
+            data-active-toggle="user-list-item"
+          >
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/7okoma.webp"
+                alt="! 𓂀 AL 7OKOUMA"
+                class="user-img"
+              />
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #0a0909">! 𓂀 AL 7OKOUMA</div>
+            <img src="./imgs/avatars/7okomatag.webp" alt="7okomatag"/>
+          </button>
+          <button
+            class="user-list-row offline"
+            data-active-toggle="user-list-item"
+          >
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/sami.jpg"
+                alt="الأمير عباس القحطاني"
+                class="user-img"
+              />
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #030303">𝑺𝒙 الأمير عباس القحطاني</div>
+            <img src="./imgs/avatars/samitag.webp" alt="samitag"/>
+          </button>
+
+          <!-- me HHH -->
+          <button
+            class="user-list-row offline"
+            data-active-toggle="user-list-item">
+            <div class="user-img-wrapper">
+              <img
+                src="./imgs/avatars/wolfix.jpg"
+                alt="𝒲𝒪𝐿𝐹𝐼𝒳"
+                class="user-img"/>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; color: #77755a;">
+              𝒲𝒪𝐿𝐹𝐼𝒳
+              <img src="./imgs/avatars/wolfixtag.webp" alt="𝒲𝒪𝐿𝐹𝐼𝒳"/>
+          </div>          
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol fill="none" viewBox="0 0 23 23" id="svg-voice"> 
+        <path
+          fill="currentColor"
+          d="M3 9v6h4l5 5V4L7 9H3zm12.5 3a2.5 2.5 0 0 0-1.56-2.3.75.75 0 0 1 .56-1.4 4 4 0 0 1 0 7.4.75.75 0 1 1-.56-1.4 2.5 2.5 0 0 0 1.56-2.3zm1.94-6.34a.75.75 0 0 1 1.12-.12 8 8 0 0 1 0 12.92.75.75 0 1 1-.99-1.12 6.5 6.5 0 0 0 0-10.68.75.75 0 0 1-.13-1.1z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-hash">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-chevron">
+        <path
+          fill="currentColor"
+          d="M5.3 9.3a1 1 0 0 1 1.4 0l5.3 5.29 5.3-5.3a1 1 0 1 1 1.4 1.42l-6 6a1 1 0 0 1-1.4 0l-6-6a1 1 0 0 1 0-1.42Z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-thread">
+        <path
+          d="M12 2.81a1 1 0 0 1 0-1.41l.36-.36a1 1 0 0 1 1.41 0l9.2 9.2a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.3.13l-9.54-6.72a1 1 0 0 1-.08-1.58l1-1L12 2.8ZM12 21.2a1 1 0 0 1 0 1.41l-.35.35a1 1 0 0 1-1.41 0l-9.2-9.19a1 1 0 0 1 0-1.41l.7-.7a1 1 0 0 1 1.3-.12l9.54 6.72a1 1 0 0 1 .07 1.58l-1 1 .35.36ZM15.66 16.8a1 1 0 0 1-1.38.28l-8.49-5.66A1 1 0 1 1 6.9 9.76l8.49 5.65a1 1 0 0 1 .27 1.39ZM17.1 14.25a1 1 0 1 0 1.11-1.66L9.73 6.93a1 1 0 0 0-1.11 1.66l8.49 5.66Z"
+          fill="currentColor"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-notification-bell">
+        <path
+          fill="currentColor"
+          d="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a.47.47 0 0 0-.07-.74 6.97 6.97 0 0 0-1.35-.64.62.62 0 0 1-.38-.43 2 2 0 0 0-3.86 0 .62.62 0 0 1-.38.43A7 7 0 0 0 5 9.5v2.09a.5.5 0 0 1-.13.33l-1.1 1.22A3 3 0 0 0 3 15.15v.28c0 .24.04.48.13.7ZM18.64 9.36c.13-.13.36-.05.36.14v2.09c0 .12.05.24.13.33l1.1 1.22a3 3 0 0 1 .77 2.01v.28c0 .67-.34 1.29-.95 1.56-1.31.6-4 1.51-8.05 1.51-.46 0-.9-.01-1.33-.03a.48.48 0 0 1-.3-.83l8.27-8.28ZM9.18 19.84A.16.16 0 0 0 9 20a3 3 0 1 0 6 0c0-.1-.09-.17-.18-.16a24.84 24.84 0 0 1-5.64 0Z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-pin">
+        <path
+          fill="currentColor"
+          d="M19.38 11.38a3 3 0 0 0 4.24 0l.03-.03a.5.5 0 0 0 0-.7L13.35.35a.5.5 0 0 0-.7 0l-.03.03a3 3 0 0 0 0 4.24L13 5l-2.92 2.92-3.65-.34a2 2 0 0 0-1.6.58l-.62.63a1 1 0 0 0 0 1.42l9.58 9.58a1 1 0 0 0 1.42 0l.63-.63a2 2 0 0 0 .58-1.6l-.34-3.64L19 11l.38.38ZM9.07 17.07a.5.5 0 0 1-.08.77l-5.15 3.43a.5.5 0 0 1-.63-.06l-.42-.42a.5.5 0 0 1-.06-.63L6.16 15a.5.5 0 0 1 .77-.08l2.14 2.14Z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-users">
+        <path
+          fill="currentColor"
+          d="M14.5 8a3 3 0 1 0-2.7-4.3c-.2.4.06.86.44 1.12a5 5 0 0 1 2.14 3.08c.01.06.06.1.12.1ZM18.44 17.27c.15.43.54.73 1 .73h1.06c.83 0 1.5-.67 1.5-1.5a7.5 7.5 0 0 0-6.5-7.43c-.55-.08-.99.38-1.1.92-.06.3-.15.6-.26.87-.23.58-.05 1.3.47 1.63a9.53 9.53 0 0 1 3.83 4.78ZM12.5 9a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM2 20.5a7.5 7.5 0 0 1 15 0c0 .83-.67 1.5-1.5 1.5a.2.2 0 0 1-.2-.16c-.2-.96-.56-1.87-.88-2.54-.1-.23-.42-.15-.42.1v2.1a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2.1c0-.25-.31-.33-.42-.1-.32.67-.67 1.58-.88 2.54a.2.2 0 0 1-.2.16A1.5 1.5 0 0 1 2 20.5Z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-inbox">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M5 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H5ZM4 5.5C4 4.67 4.67 4 5.5 4h13c.83 0 1.5.67 1.5 1.5v6c0 .83-.67 1.5-1.5 1.5h-2.65c-.5 0-.85.5-.85 1a3 3 0 1 1-6 0c0-.5-.35-1-.85-1H5.5A1.5 1.5 0 0 1 4 11.5v-6Z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-help">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm-.28-16c-.98 0-1.81.47-2.27 1.14A1 1 0 1 1 7.8 7.01 4.73 4.73 0 0 1 11.72 5c2.5 0 4.65 1.88 4.65 4.38 0 2.1-1.54 3.77-3.52 4.24l.14 1a1 1 0 0 1-1.98.27l-.28-2a1 1 0 0 1 .99-1.14c1.54 0 2.65-1.14 2.65-2.38 0-1.23-1.1-2.37-2.65-2.37ZM13 17.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0Z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-x">
+        <path
+          fill="currentColor"
+          d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-search">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M15.62 17.03a9 9 0 1 1 1.41-1.41l4.68 4.67a1 1 0 0 1-1.42 1.42l-4.67-4.68ZM17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-emoji">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22ZM6.5 13a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-9.8 1.17a1 1 0 0 1 1.39.27 3.5 3.5 0 0 0 5.82 0 1 1 0 0 1 1.66 1.12 5.5 5.5 0 0 1-9.14 0 1 1 0 0 1 .27-1.4Z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-edit">
+        <path
+          fill="currentColor"
+          d="m13.96 5.46 4.58 4.58a1 1 0 0 0 1.42 0l1.38-1.38a2 2 0 0 0 0-2.82l-3.18-3.18a2 2 0 0 0-2.82 0l-1.38 1.38a1 1 0 0 0 0 1.42ZM2.11 20.16l.73-4.22a3 3 0 0 1 .83-1.61l7.87-7.87a1 1 0 0 1 1.42 0l4.58 4.58a1 1 0 0 1 0 1.42l-7.87 7.87a3 3 0 0 1-1.6.83l-4.23.73a1.5 1.5 0 0 1-1.73-1.73Z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-forward">
+        <path
+          fill="currentColor"
+          d="M21.7 7.3a1 1 0 0 1 0 1.4l-5 5a1 1 0 0 1-1.4-1.4L18.58 9H13a7 7 0 0 0-7 7v4a1 1 0 1 1-2 0v-4a9 9 0 0 1 9-9h5.59l-3.3-3.3a1 1 0 0 1 1.42-1.4l5 5Z"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-more">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M4 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+      <symbol fill="none" viewBox="0 0 24 24" id="svg-plus">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+      <symbol viewBox="0 0 24 24" fill="none" id="svg-present">
+        <path
+          d="M5 22C3.895 22 3 21.105 3 20V14.5C3 14.224 3.224 14 3.5 14H10.5C10.776 14 11 14.224 11 14.5V21.5C11 21.776 10.776 22 10.5 22H5ZM13 21.5C13 21.776 13.224 22 13.5 22H19C20.105 22 21 21.105 21 20V14.5C21 14.224 20.776 14 20.5 14H13.5C13.224 14 13 14.224 13 14.5V21.5Z"
+          fill="currentColor"
+        />
+        <path
+          d="M2 10C2 8.895 2.895 8 4 8H20C21.105 8 22 8.895 22 10V11.5C22 11.776 21.776 12 21.5 12H2.5C2.224 12 2 11.776 2 11.5V10Z"
+          fill="currentColor"
+        />
+        <path
+          d="M19 6C19 4.343 17.657 3 16 3H15.911C14.494 3 13.259 3.964 12.915 5.339L12 9H16C17.657 9 19 7.657 19 6Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M5 6C5 4.343 6.343 3 8 3H8.089C9.506 3 10.741 3.964 11.085 5.339L12 9H8C6.343 9 5 7.657 5 6Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+      </symbol>
+      <symbol viewBox="0 0 24 24" fill="none" id="svg-gif">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM16.7962 16.1875H15.1672V8.48938H20.311V9.96214H16.7962V11.7909H19.6527V13.2647H16.7962V16.1875ZM13.6022 16.1875H11.9731V8.48938H13.6022V16.1875ZM5.32316 15.842C5.82201 16.1763 6.39435 16.344 7.04121 16.344C7.90437 16.344 8.55537 16.0459 8.9942 15.4508L9.20637 16.1877H10.5229V11.8139H7.16437V13.265H8.93831V14.2244C8.79652 14.4252 8.59677 14.5846 8.33596 14.7036C8.08342 14.8154 7.80398 14.8712 7.49867 14.8712C6.81455 14.8712 6.28982 14.6518 5.92551 14.213C5.5612 13.7742 5.37904 13.1491 5.37904 12.3387C5.37904 11.5355 5.5612 10.9135 5.92551 10.4747C6.28982 10.0286 6.81455 9.8061 7.49867 9.8061C8.25005 9.8061 8.81515 10.1549 9.19498 10.8545L10.4556 9.95099C10.1875 9.43765 9.78906 9.03918 9.26122 8.75664C8.74063 8.47409 8.14966 8.33333 7.48728 8.33333C6.70588 8.33333 6.03315 8.5041 5.46805 8.84668C4.9102 9.18925 4.48172 9.6612 4.18469 10.2636C3.8949 10.8659 3.75 11.5573 3.75 12.3387C3.75 13.1273 3.88765 13.8259 4.16295 14.4355C4.43826 15.0379 4.8243 15.5078 5.32316 15.842Z"
+          fill="currentColor"
+        />
+      </symbol>
+      <symbol viewBox="0 0 24 24" fill="none" id="svg-sticker">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M18.6 1H5.4C2.9701 1 1 2.9701 1 5.4V18.6C1 21.0299 2.9701 23 5.4 23H13.65C13.9536 23 14.2 22.7536 14.2 22.45V19.7C14.2 16.6629 16.6629 14.2 19.7 14.2H22.45C22.7536 14.2 23 13.9536 23 13.65V5.4C23 2.9701 21.0299 1 18.6 1ZM22.67 16.4704C22.6854 16.4374 22.6612 16.4 22.6249 16.4H22.0892H19.7C17.8773 16.4 16.4 17.8773 16.4 19.7V22.0892V22.6249C16.4 22.6612 16.4374 22.6854 16.4704 22.67C16.7993 22.5105 17.104 22.296 17.3669 22.0331L22.0331 17.3669C22.296 17.104 22.5105 16.7993 22.67 16.4704ZM7.59883 8.14984C7.59883 9.06064 6.85963 9.79984 5.94883 9.79984C5.03803 9.79984 4.29883 9.06064 4.29883 8.14984C4.29883 7.23904 5.03803 6.49984 5.94883 6.49984C6.85963 6.49984 7.59883 7.23904 7.59883 8.14984ZM18.0488 9.79984C18.9596 9.79984 19.6988 9.06064 19.6988 8.14984C19.6988 7.23904 18.9596 6.49984 18.0488 6.49984C17.138 6.49984 16.3988 7.23904 16.3988 8.14984C16.3988 9.06064 17.138 9.79984 18.0488 9.79984ZM7.26993 11.0857C7.77483 10.748 8.45903 10.8833 8.79673 11.3882C9.48973 12.4233 10.6656 13.0998 11.9988 13.0998C13.332 13.0998 14.5079 12.4233 15.2009 11.3882C15.5386 10.8833 16.2217 10.748 16.7266 11.0857C17.2315 11.4234 17.3668 12.1065 17.0291 12.6114C15.9456 14.2295 14.0976 15.2998 11.9988 15.2998C9.90003 15.2998 8.05203 14.2295 6.96853 12.6114C6.63083 12.1065 6.76503 11.4234 7.26993 11.0857Z"
+          fill="currentColor"
+        />
+      </symbol>
+    </svg>
+    <script>
+      // Function to add a new message
+      function addMessage() {
+        // Get the input field
+        const messageInput = document.querySelector('.message-input');
+    
+        // Get the chat messages container
+        const chatMessages = document.querySelector('.chat-messages');
+    
+        // Get the input value and trim whitespace
+        const messageText = messageInput.value.trim();
+    
+        // If the input is not empty
+        if (messageText !== '') {
+          // Create a new message group container
+          const messageGroup = document.createElement('div');
+          messageGroup.classList.add('message-group');
+    
+          // Create a new message row
+          const messageRow = document.createElement('div');
+          messageRow.classList.add('message-row');
+    
+          // Create a message content container
+          const messageContent = document.createElement('div');
+          messageContent.classList.add('message-content');
+          messageContent.textContent = messageText;
+    
+          // Add the timestamp
+          const messageDate = document.createElement('div');
+          messageDate.classList.add('message-date');
+          const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          messageDate.textContent = currentTime;
+    
+          // Append content to the message row
+          messageRow.appendChild(messageDate);
+          messageRow.appendChild(messageContent);
+    
+          // Append the message row to the message group
+          messageGroup.appendChild(messageRow);
+    
+          // Append the message group to the chat messages
+          chatMessages.appendChild(messageGroup);
+    
+          // Scroll to the bottom of the chat messages
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+          // Clear the input field
+          messageInput.value = '';
+        }
+      }
+    
+      // Event listener for the Enter key
+      document.querySelector('.message-input').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          addMessage();
+        }
+      });
+    </script>
+    
+  </body>
+</html>
+<!-- 1 -->
