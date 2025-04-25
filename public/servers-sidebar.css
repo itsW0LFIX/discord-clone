@@ -48,7 +48,7 @@
     &.active,
     &:hover,
     &:focus-within {
-      background-color: var(--accent-color);
+      background-color: #00000000;
       color: var(--accent-color-foreground);
       --border-radius: 1rem;
 
