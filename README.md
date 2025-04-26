@@ -71,6 +71,11 @@ This repository contains the UI/UX design and basic functionality for a **Discor
 
 ---
 
+## Hosted Link
+
+You can access the games here: [HERE](https://who-is-wolfix.web.app/)
+
+
 ## 📑 Contribution
 
 If you’d like to contribute to this project, feel free to fork the repository and submit pull requests. Contributions are welcome!
