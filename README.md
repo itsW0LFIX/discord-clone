@@ -48,6 +48,12 @@ This repository contains the UI/UX design and basic functionality for a **Discor
   
 ---
 
+## Hosted Link
+
+You can access the games here: [HERE](https://who-is-wolfix.web.app/)
+
+---
+
 ## 📁 File Structure
     ```php
     discord-clone/
@@ -70,11 +76,6 @@ This repository contains the UI/UX design and basic functionality for a **Discor
     ├── other files about hosting/
 
 ---
-
-## Hosted Link
-
-You can access the games here: [HERE](https://who-is-wolfix.web.app/)
-
 
 ## 📑 Contribution
 
