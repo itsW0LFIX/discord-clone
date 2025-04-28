@@ -1173,45 +1173,60 @@
 
     // Array to store fetched users
     async function lookupUser() {
-      let searchTerm = document.getElementById("discordID").value.trim();
+  let searchTerm = document.getElementById("discordID").value.trim();
 
-      if (!searchTerm) {
-        alert("⚠️ Please enter a valid Discord User ID.");
-        return;
-      }
+  if (!searchTerm) {
+    alert("⚠️ Please enter a valid Discord User ID.");
+    return;
+  }
 
-      // Clear all users and section headers
-      clearUserList();
+  // Clear all users and section headers
+  clearUserList();
 
-      const userListGroup = document.querySelector('.user-list-group');
+  const userListGroup = document.querySelector('.user-list-group');
+  
+  // Show loading message first
+  const loadingTitle = document.createElement('div');
+  loadingTitle.className = 'user-list-group-title';
+  loadingTitle.textContent = 'Loading...';
+  userListGroup.appendChild(loadingTitle);
 
-      // Try fetching with the term as an ID
-      let apiURL = `https://discordlookup.mesalytic.moe/v1/user/${searchTerm}`;
-      let data = await fetchData(apiURL);
+  // Try fetching with the term as an ID
+  let apiURL = `https://discordlookup.mesalytic.moe/v1/user/${searchTerm}`;
+  let data = await fetchData(apiURL);
 
-      if (data.error || data.message) {
-        // Display clear error that username search isn't supported
-        const title = document.createElement('div');
-        title.className = 'user-list-group-title';
-        title.textContent = '❌ USER NOT FOUND!!!';
-
-        // Add explanation text
-        const explanation = document.createElement('div');
-        explanation.className = 'user-list-explanation';
-        explanation.textContent = 'Only Discord IDs are supported.';
-        explanation.style.padding = '5px 10px';
-        explanation.style.fontSize = '12px';
-        explanation.style.color = '#999';
-
-        userListGroup.appendChild(title);
-        userListGroup.appendChild(explanation);
-        return;
-      }
-
-      // Add user to sidebar
-      addUserToSidebar(data);
-    }
-
+  // Update the title with results
+  if (data.error || data.message) {
+    loadingTitle.textContent = '❌ USER NOT FOUND!!!';
+    
+    // Add explanation text
+    const explanation = document.createElement('div');
+    explanation.className = 'user-list-explanation';
+    explanation.textContent = 'Only Discord IDs are supported.';
+    explanation.style.padding = '5px 10px';
+    explanation.style.fontSize = '12px';
+    explanation.style.color = '#999';
+    userListGroup.appendChild(explanation);
+    return;
+  } else {
+    // Update title with user information
+    const displayName = data.global_name || data.name || data.username;
+    loadingTitle.textContent = `🔎 Found: ${displayName}`;
+    
+    // Add user information subtitle
+    const infoText = document.createElement('div');
+    infoText.className = 'user-list-explanation';
+    infoText.textContent = `ID: ${data.id} • Username: ${data.username}`;
+    infoText.style.padding = '2px 10px';
+    infoText.style.fontSize = '11px';
+    infoText.style.color = '#999';
+    userListGroup.appendChild(infoText);
+    
+    // Add user to sidebar
+    addUserToSidebar(data);
+  }
+}
+    
     function addUserToSidebar(userData) {
       // Check if user already exists
       if (fetchedUsers.some(user => user.id === userData.id)) {
