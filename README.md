@@ -1,7 +1,7 @@
 # Discord Clone - Chat Interface Design
 
 > **Project Type:** UI/UX Design  
-> **Tools Used:** HTML, CSS, JavaScript  
+> **Tools Used:** HTML, CSS, JavaScript, firebase, Git
 > **Status:** In Progress  
 
 ---
@@ -31,6 +31,10 @@ This repository contains the UI/UX design and basic functionality for a **Discor
   - Interactive modals for settings ⚙️ and new channel creation ➕.
   - Real-time message typing animation (simulated) ⌨️.
 
+- **Dynamic search** 🔎:
+  - Real-time filtering of users as you type 🔎 by Search by Discord ID with instant results 🕶.
+  - Detailed user cards for search results 📋.
+
 ---
 
 ## 🔧 Tools and Technologies
@@ -38,6 +42,7 @@ This repository contains the UI/UX design and basic functionality for a **Discor
 - **HTML**: Structure for the layout and components.
 - **CSS**: Styling for modern aesthetics and responsive design.
 - **JavaScript**: Adds interactivity (e.g., modals, collapsible menus).
+- **firebase**: for hosting and add database.
 
 ---
 
