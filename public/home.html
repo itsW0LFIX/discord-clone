@@ -857,7 +857,7 @@
     <div class="chat-sidebar scrollbar-vanishing" data-users-sidebar>
       <!-- online users -->
       <div class="user-list-group">
-        <div class="user-list-group-title">Online &ndash; 8</div>
+        <div class="user-list-group-title">Online &ndash; 9</div>
         <!-- my Love -->
         <button class="user-list-row" data-status="active" data-active-toggle="user-list-item">
           <div class="user-img-wrapper">
@@ -865,12 +865,19 @@
           </div>
           <div style="display: flex; align-items: center; gap: 10px; color: #d424bd">! ﾒ𝒲 ʏᴀʀᴀ࿐</div>
         </button>
+        <!-- ! islaaaam -->
+        <button class="user-list-row" data-status="busy" data-active-toggle="user-list-item">
+          <div class="user-img-wrapper">
+            <img src="./imgs/avatars/islaam.webp" alt="islam" class="user-img" />
+          </div>
+          <div style="color: #df180a;">! islaaaam</div>
+        </button>
         <!-- Diamond -->
         <button class="user-list-row" data-status="busy" data-active-toggle="user-list-item">
           <div class="user-img-wrapper">
             <img src="./imgs/avatars/diamond.webp" alt="! 𝐃𝐈𝐀𝐌𝐎𝐍𝐃𝐒" class="user-img" />
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; color: #ff0000">! 𝐃𝐈𝐀𝐌𝐎𝐍𝐃𝐒</div>
+          <div style="display: flex; align-items: center; gap: 10px; color: #8e0ec0">! 𝐃𝐈𝐀𝐌𝐎𝐍𝐃𝐒</div>
         </button>
         <!-- user -->
         <button class="user-list-row" data-status="active" data-active-toggle="user-list-item">
@@ -1173,60 +1180,60 @@
 
     // Array to store fetched users
     async function lookupUser() {
-  let searchTerm = document.getElementById("discordID").value.trim();
+      let searchTerm = document.getElementById("discordID").value.trim();
 
-  if (!searchTerm) {
-    alert("⚠️ Please enter a valid Discord User ID.");
-    return;
-  }
+      if (!searchTerm) {
+        alert("⚠️ Please enter a valid Discord User ID.");
+        return;
+      }
 
-  // Clear all users and section headers
-  clearUserList();
+      // Clear all users and section headers
+      clearUserList();
 
-  const userListGroup = document.querySelector('.user-list-group');
-  
-  // Show loading message first
-  const loadingTitle = document.createElement('div');
-  loadingTitle.className = 'user-list-group-title';
-  loadingTitle.textContent = 'Loading...';
-  userListGroup.appendChild(loadingTitle);
+      const userListGroup = document.querySelector('.user-list-group');
 
-  // Try fetching with the term as an ID
-  let apiURL = `https://discordlookup.mesalytic.moe/v1/user/${searchTerm}`;
-  let data = await fetchData(apiURL);
+      // Show loading message first
+      const loadingTitle = document.createElement('div');
+      loadingTitle.className = 'user-list-group-title';
+      loadingTitle.textContent = 'Loading...';
+      userListGroup.appendChild(loadingTitle);
 
-  // Update the title with results
-  if (data.error || data.message) {
-    loadingTitle.textContent = '❌ USER NOT FOUND!!!';
-    
-    // Add explanation text
-    const explanation = document.createElement('div');
-    explanation.className = 'user-list-explanation';
-    explanation.textContent = 'Only Discord IDs are supported.';
-    explanation.style.padding = '5px 10px';
-    explanation.style.fontSize = '12px';
-    explanation.style.color = '#999';
-    userListGroup.appendChild(explanation);
-    return;
-  } else {
-    // Update title with user information
-    const displayName = data.global_name || data.name || data.username;
-    loadingTitle.textContent = `🔎 Found: ${displayName}`;
-    
-    // Add user information subtitle
-    const infoText = document.createElement('div');
-    infoText.className = 'user-list-explanation';
-    infoText.textContent = `ID: ${data.id} • Username: ${data.username}`;
-    infoText.style.padding = '2px 10px';
-    infoText.style.fontSize = '11px';
-    infoText.style.color = '#999';
-    userListGroup.appendChild(infoText);
-    
-    // Add user to sidebar
-    addUserToSidebar(data);
-  }
-}
-    
+      // Try fetching with the term as an ID
+      let apiURL = `https://discordlookup.mesalytic.moe/v1/user/${searchTerm}`;
+      let data = await fetchData(apiURL);
+
+      // Update the title with results
+      if (data.error || data.message) {
+        loadingTitle.textContent = '❌ USER NOT FOUND!!!';
+
+        // Add explanation text
+        const explanation = document.createElement('div');
+        explanation.className = 'user-list-explanation';
+        explanation.textContent = 'Only Discord IDs are supported.';
+        explanation.style.padding = '5px 10px';
+        explanation.style.fontSize = '12px';
+        explanation.style.color = '#999';
+        userListGroup.appendChild(explanation);
+        return;
+      } else {
+        // Update title with user information
+        const displayName = data.global_name || data.name || data.username;
+        loadingTitle.textContent = `🔎 Found: ${displayName}`;
+
+        // Add user information subtitle
+        const infoText = document.createElement('div');
+        infoText.className = 'user-list-explanation';
+        infoText.textContent = `ID: ${data.id} • Username: ${data.username}`;
+        infoText.style.padding = '2px 10px';
+        infoText.style.fontSize = '11px';
+        infoText.style.color = '#999';
+        userListGroup.appendChild(infoText);
+
+        // Add user to sidebar
+        addUserToSidebar(data);
+      }
+    }
+
     function addUserToSidebar(userData) {
       // Check if user already exists
       if (fetchedUsers.some(user => user.id === userData.id)) {
